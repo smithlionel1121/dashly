@@ -1,0 +1,52 @@
+main {
+    display: grid;
+    grid-template-areas: "left right"
+                         "nav nav"
+                         "footer footer";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+header, footer {
+    color: blue;
+    text-align: center;
+    background-color: chartreuse;
+}
+
+#hidden {
+    color: red;
+}
+
+.try {
+    color:palegreen;
+    grid-area: right;
+    
+}
+
+.camo {
+    color: white;
+    grid-area: left;
+
+
+}
+
+.runpy {
+    color: aqua;
+    grid-area: nav;
+}
+
+#created {
+    color: brown;
+    
+    background-color: dimgray;
+}
+
+#maker {
+    background-color: bisque;
+    grid-area: footer;
+}
+
+#made {
+    background-color: beige;
+    grid-column: 1 / -1;
+}
