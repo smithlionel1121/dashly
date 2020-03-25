@@ -31,14 +31,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'notepad.apps.NotepadConfig',
-    'news',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'notepad.apps.NotepadConfig',
+    'news',
+    'finance',
 ]
 
 MIDDLEWARE = [
