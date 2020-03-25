@@ -16,9 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from django.conf import settings
+from django.conf.urls.static import static
+from news import views
 
 urlpatterns = [
     path('', include('notepad.base')),
     path('admin/', admin.site.urls),
     path('notes/', include('notepad.urls', namespace='notes')),
-]
+    path('scrape/', views.scrape, name='scrape'),
+    path('home/', views.news_list, name='home'),
+    ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
