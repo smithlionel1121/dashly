@@ -33,7 +33,8 @@ def list_view(request):
 	context = {
 		'object_list': notes
 	}
-	return render(request, "notepad/list.html", context)
+	#return render(request, "notepad/list.html", context)
+	return render(request, "news/home.html", context)
 
 
 def delete_view(request, id):

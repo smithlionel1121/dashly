@@ -14,11 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 
 from django.conf import settings
 from django.conf.urls.static import static
+
 from news import views
+from finance.views import company_article_list, ChartData, dash, dash_ajax
 
 urlpatterns = [
     path('', include('notepad.base')),
@@ -26,6 +28,18 @@ urlpatterns = [
     path('notes/', include('notepad.urls', namespace='notes')),
     path('scrape/', views.scrape, name='scrape'),
     path('home/', views.news_list, name='home'),
+    path('companies/', company_article_list, name='companies'),
+    path('api/chart/data', ChartData.as_view(), name='api-chart-data'),
+    path('dash/', include('finance.urls')),
+    # path('accounts/', include('allauth.urls')),
+    
+
+    #path('dash/', dash),
+    # path('_dash', dash_ajax),
+    # path('_dash-layout', dash_ajax), # added
+    # path('_dash-dependencies', dash_ajax), # added
+    # path('_dash-update-component', dash), # added
+    # #path('accounts/', include('allauth.urls')),
     ]
 
 if settings.DEBUG:

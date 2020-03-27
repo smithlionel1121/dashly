@@ -19,10 +19,10 @@ def news_list(request):
     time_difference = now - user_p.last_scrape
     time_difference_in_hours = time_difference / timedelta(minutes=60)
     next_scrape = 24 - time_difference_in_hours
-    if next_scrape <= 24:
-        hide_me = True
-    else:
+    if next_scrape <= 0:
         hide_me = False
+    else:
+        hide_me = True
 
     stories =  Story.objects.all()
     context = {

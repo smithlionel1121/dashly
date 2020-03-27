@@ -22,7 +22,7 @@
         <div class="row">
 
             <div class="col-sm-3 text-center">
-                <!-- <h3>News</h3> -->
+                <h3>News</h3>
             {% for object in object_list %}
             <div class="card text-center" style="width: 100%;">
                 <div class="card-body">
@@ -33,23 +33,23 @@
             {% endfor %}
             </div>
 
-            <!-- <div class="col-sm-3 text-center">
+            <div class="col-sm-3 text-center">
                 <h3>Notepad</h3>
                 {% for note in notes_list %}
                 <div class="card text-center" style="width: 100%;">
-                {% if note.image %}
-                <img class="card-img-top" src="{{ note.image.url }}" alt="Card image cap">
-                {% endif %}
-                <div class="card-body">
-                    <h5 class="card-title">{{ note.title }}</h5>
-                    {% if note.url %}
-                    <a href="{{ note.url }}">Link</a>
+                    {% if note.image %}
+                    <img class="card-img-top" src="{{ note.image.url }}" alt="Card image cap">
                     {% endif %}
-                </div>
-                <div>
-                    <span><a href="{{ note.get_update_url }}"><i class="fas fa-pen-alt"> Edit</i></a></span>
-                    <span><a href="{{ note.get_delete_url }}"><i class="fas fa-trash-alt"> Delete</i></a></span>
-                </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ note.title }}</h5>
+                        {% if note.url %}
+                        <a href="{{ note.url }}">Link</a>
+                        {% endif %}
+                    </div>
+                    <div>
+                            <span><a href="{{ note.get_update_url }}"><i class="fas fa-pen-alt"> Edit</i></a></span>
+                            <span><a href="{{ note.get_delete_url }}"><i class="fas fa-trash-alt"> Delete</i></a></span>
+                    </div>
                 </div>
                 <hr>
                 {% endfor %}
@@ -64,7 +64,7 @@
                     </form>
                 </div>
 
-            </div> -->
+            </div>
 
 
         </div>
