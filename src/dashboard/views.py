@@ -7,7 +7,7 @@ from notepad.forms import NoteModelForm
 from notepad.models import Note
 from news.models import Story, UserProfile
 
-@login_required
+@login_required(login_url='/admin')
 def home(request):
 	user_p = UserProfile.objects.get(user=request.user)
 	now = datetime.now(timezone.utc)

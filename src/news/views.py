@@ -87,4 +87,4 @@ def scrape(request):
             continue
         except Error:
             continue
-    return redirect('/home/')  
+    return redirect('/home/')
