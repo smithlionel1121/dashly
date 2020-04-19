@@ -31,7 +31,7 @@ def create_view(request):
 def list_view(request):
 	notes = Note.objects.all()
 	context = {
-		'object_list': notes
+		'notes_list': notes
 	}
 	#return render(request, "notepad/list.html", context)
 	return render(request, "news/home.html", context)

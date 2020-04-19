@@ -103,8 +103,8 @@ def _create_app():
                 'type': 'candlestick',
                 'name': ticker,
                 'legendgroup': ticker,
-                'increasing': {'line': {'color': colorscale[0]}},
-                'decreasing': {'line': {'color': colorscale[1]}}
+                # 'increasing': {'line': {'color': colorscale[0]}},
+                # 'decreasing': {'line': {'color': colorscale[1]}}
             }
 
             bb_bands = bbands(df.close)

@@ -20,15 +20,17 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from .views import home
-from news import views
+from news.views import scrape
+from notepad.views import create_view
 from finance.views import company_article_list, ChartData, dash, dash_ajax
 
 urlpatterns = [
     path('', include('notepad.base')),
     path('admin/', admin.site.urls),
     path('notes/', include('notepad.urls', namespace='notes')),
-    path('scrape/', views.scrape, name='scrape'),
+    path('scrape/', scrape, name='scrape'),
     path('home/', home, name='home'),
+    path('home/create/', create_view, name='home-create'),
     path('companies/', company_article_list, name='companies'),
     path('api/chart/data', ChartData.as_view(), name='api-chart-data'),
     path('dash/', include('finance.urls')),
